@@ -59,17 +59,19 @@ jobs:
           cache-to: |
             type=registry,ref=${{ vars.DOCKERHUB_USERNAME }}/zadanie_2:cache,mode=max 
           tags: ${{ steps.meta.outputs.tags }}
+          outputs: type=oci,dest=/tmp/image.tar
       
       - name: Trivy scan
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: ${{ steps.meta.outputs.tags }}
+          image-ref: /tmp/image.tar
           format: table
           exit-code: 1
           ignore-unfixed: true
           vuln-type: os,library
           severity: CRITICAL,HIGH
-
+          scan-type: fs
+          
       - name: Build and push to GHCR
         if: success()
         uses: docker/build-push-action@v5
