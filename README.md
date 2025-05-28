@@ -13,7 +13,7 @@ Opracowany łańcuch GHAction został uruchomiony.
 
 ## Etapy konfiguracji i wykonania zadania
 
-### 1. **Inicjacja repozytorium**
+### 1. **Inicjalizacja repozytorium**
 ![1.png](screenshots/1.png)
 - `git init -b main`
 - `gh auth status`
