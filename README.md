@@ -14,21 +14,21 @@ Opracowany łańcuch GHAction został uruchomiony.
 ## Etapy konfiguracji i wykonania zadania
 
 ### 1. **Inicjalizacja repozytorium**
-![1.png](screenshots/1.png)
 - `git init -b main`
 - `gh auth status`
 - `gh repo create`
+![1.png](screenshots/1.png)
 
 ### 2. **Dodanie kodu, commit i push do Github**
-![2.png](screenshots/2.png)
 - `git add .`
 - `git commit -m "Inicjalizacja repozytorium zadanie 2"`
 - `git push -u origin main`
+![2.png](screenshots/2.png)
 
 ### 3. **Konfiguracja sekretów i zmiennych repozytorium**
-![3.png](screenshots/3.png)
 - `gh secret set DOCKERHUB_TOKEN`
 - `gh variable set DOCKERHUB_USERNAME`
+![3.png](screenshots/3.png)
 
 #### 3.1. **Potwierdzenie obecności sekretu i zmiennej w ustawieniach repozytorium**
 ![4.png](screenshots/4.png)
@@ -62,11 +62,11 @@ Plik workflow został przygotowany w oparciu o oficjalne akcje GitHub oraz Docke
 ## Przyjęty sposób tagowania obrazów i danych cache
 
 **Obrazy Docker** tagowane są:
-    - Tag **SHA** - dla każdego commita
-    - Tag **semver** - przy pushu tagu w repozytorium, co pozwala na łatwą identyfikację wydań produkcyjnych
+- Tag **SHA** - dla każdego commita
+- Tag **semver** - przy pushu tagu w repozytorium, co pozwala na łatwą identyfikację wydań produkcyjnych
 
 **Dane cache**:
-    - są przechowywane jako tag `cache` w publicznym repozytorium na DockerHub
+- są przechowywane jako tag `cache` w publicznym repozytorium na DockerHub
 
 ## Test podatności CVE
 
